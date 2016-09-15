@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915025149) do
+ActiveRecord::Schema.define(version: 20160915124147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,4 +25,14 @@ ActiveRecord::Schema.define(version: 20160915025149) do
     t.citext "phone"
   end
 
+  create_table "tee_times", force: :cascade do |t|
+    t.datetime "tee_off_at"
+    t.decimal  "unit_price", precision: 8, scale: 2
+    t.integer  "course_id"
+    t.boolean  "booked"
+    t.integer  "quantity"
+    t.index ["course_id"], name: "index_tee_times_on_course_id", using: :btree
+  end
+
+  add_foreign_key "tee_times", "courses"
 end

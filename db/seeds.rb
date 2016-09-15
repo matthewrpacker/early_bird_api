@@ -1,7 +1,8 @@
 Course.destroy_all
-
+TeeTime.destroy_all
 puts 'Begin Seeding'
-Course.create(
+
+overland_park =  Course.create(
   name: 'Overland Park',
   street: '1801 S. Huron St.',
   city: 'Denver',
@@ -9,6 +10,22 @@ Course.create(
   image_path: 'http://www.cityofdenvergolf.com/images/galleries/overland_park/Overland%20Hole%201a%20NEW.jpg',
   phone: '720-865-0430'
 )
+
+tee_off_at = DateTime.new(2016, 11, 01, 7) # DateTime.new('2016-11-01T07:00Z')
+30.times do
+  61.times do
+    overland_park.tee_times.create(
+      tee_off_at: tee_off_at,
+      unit_price: 27.00,
+      course_id: 1,
+      booked: false,
+      quantity: 4
+    )
+    tee_off_at += 10.minutes
+  end
+  tee_off_at += 1.day
+  tee_off_at = tee_off_at.change({hour: 7, min: 0})
+end
 
 Course.create(
   name: 'City Park',
