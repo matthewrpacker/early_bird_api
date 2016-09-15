@@ -1,4 +1,4 @@
-class Api::V1::TeeTimesController < ApplicationConroller
+class Api::V1::TeeTimesController < ApplicationController
   respond_to :json
 
   def index

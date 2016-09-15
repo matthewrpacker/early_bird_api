@@ -1,5 +1,5 @@
-class Api::V1::CoursesController < ApplicationConroller
-  repond_to :json
+class Api::V1::CoursesController < ApplicationController
+  respond_to :json
 
   def index
     respond_with Course.all

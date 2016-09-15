@@ -1,8 +1,9 @@
 Course.destroy_all
 
+puts 'Begin Seeding'
 Course.create(
   name: 'Overland Park',
-  street: '1801 S. Huron St.'
+  street: '1801 S. Huron St.',
   city: 'Denver',
   state: 'CO',
   image_path: 'http://www.cityofdenvergolf.com/images/galleries/overland_park/Overland%20Hole%201a%20NEW.jpg',
@@ -107,3 +108,4 @@ Course.create(
   image_path: 'http://golfaurora.quick18.com/content/ws/696/cityofaurora/course1_lrg.jpg',
   phone: '303-739-6854'
 )
+puts 'Finish Seeding'
