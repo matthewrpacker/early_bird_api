@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+$ git clone (this project)
+$ rake db:{create,migrate,seed}
+$ rails s
+Visit any endpoint and enjoy.  Examples are below.
 
-Things you may want to cover:
+## Example Endpoints:
 
-* Ruby version
+### All Courses:
+/api/v1/courses
 
-* System dependencies
+### Specific Course
+/api/v1/courses/1
 
-* Configuration
+### All Tee Times
+/api/v1/tee_times
 
-* Database creation
+### All Tee Time for specific date
+/api/v1/tee_times?date=2016-11-29
 
-* Database initialization
+### All Tee Times for a specific course
+/api/v1/courses/1/tee_times
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### All Tee Times for a specific course for a specific date
+/api/v1/courses/1/tee_times?date=2016-11-25

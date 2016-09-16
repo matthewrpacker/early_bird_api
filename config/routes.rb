@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       end
 
       resources :courses, only: [:index, :show]
-      resources :tee_times, only: [:index, :show]
+      resources :tee_times, only: [:index]
     end
   end
 end
