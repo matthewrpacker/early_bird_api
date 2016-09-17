@@ -13,4 +13,9 @@ class Api::V1::Courses::TeeTimesController < ApplicationController
       respond_with Course.find(params[:id]).tee_times
     end
   end
+
+  def show
+    tee_times = Course.find(params[:course_id]).tee_times
+    respond_with tee_times.find(params[:id])
+  end
 end
