@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       namespace :courses do
         get ':id/tee_times', to: 'tee_times#index'
         get ':course_id/tee_times/:id', to: 'tee_times#show'
+        patch ':course_id/tee_times/:id', to: 'tee_times#update'
       end
 
       resources :courses, only: [:index, :show]
