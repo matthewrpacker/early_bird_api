@@ -18,4 +18,12 @@ class Api::V1::Courses::TeeTimesController < ApplicationController
     tee_times = Course.find(params[:course_id]).tee_times
     respond_with tee_times.find(params[:id])
   end
+
+  def update
+    tee_time = TeeTime.find(params[:id])
+    quantity = params[:quantity].to_i
+    if quantity <= tee_time.quantity
+      tee_time.update_attributes(quantity: tee_time.quantity-quantity)
+    end
+  end
 end
